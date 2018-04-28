@@ -14,6 +14,8 @@ public class GamePlayerManager : MonoBehaviour {
 
     public Words words;
 
+    public Text text;
+
 
     public void Awake()
     {
@@ -32,8 +34,8 @@ public class GamePlayerManager : MonoBehaviour {
  
     public void TryWord()
     {
-        Debug.Log("Word to try " + word);
-        Debug.Log("Is it a word " + words.IsWord(word));
+        string message = (words.IsWord(word)) ? " is a word" : " is not a word";
+        text.text = word+ message;
         ResetWord();
     }
 
